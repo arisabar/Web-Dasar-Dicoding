@@ -4,6 +4,9 @@
 
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  background-color: #85ffbd;
+  background-image: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%);
 }
 
 .card {
@@ -11,6 +14,7 @@ body {
   border-radius: 5px;
   padding: 30px;
   margin-top: 20px;
+  background-color: white;
 }
 
 .flex-container-column {
@@ -65,5 +69,42 @@ body {
 @media screen and (max-width: 513px) {
   .button {
     padding: 10px;
+  }
+}
+
+.history {
+  width: 80%;
+  margin: 30px auto 0 auto;
+  overflow: scroll;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th,
+td {
+  text-align: center;
+  padding: 16px;
+}
+
+th {
+  background-color: orange;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #d2d2d2;
+}
+
+@media screen and (max-width: 513px) {
+  .button {
+    padding: 10px;
+  }
+  .history {
+    width: 100%;
   }
 }
