@@ -42,14 +42,21 @@ function resultNumber() {
   if (calculator.operator === "+") {
     result =
       parseInt(calculator.firstNumber) + parseInt(calculator.displayNumber);
-  } else if (calculator.operator === "-") {
+  } else {
     result =
       parseInt(calculator.firstNumber) - parseInt(calculator.displayNumber);
-  } else {
-    clearCalculator();
   }
 
+  const history = {
+    firstNumber: calculator.firstNumber,
+    secondNumber: calculator.displayNumber,
+    operator: calculator.operator,
+    result: result,
+  };
+
+  putHistory(history);
   calculator.displayNumber = result;
+  renderHistory();
   console.log(calculator.firstNumber + "dari resultNumber(firstNumber)");
   console.log(calculator.displayNumber + "dari resultNumber(dislplay)");
   console.log(result);
@@ -60,8 +67,8 @@ function handleOperator(op) {
     calculator.operator = op;
     calculator.waitingForSecondNumber = true;
     calculator.firstNumber = calculator.displayNumber;
-    console.log(calculator.firstNumber);
-    calculator.displayNumber = `${calculator.firstNumber}${op}`;
+    // console.log(calculator.firstNumber);
+    calculator.displayNumber = `0`;
   } else {
     alert("Operator sudah di tetapkan");
   }
